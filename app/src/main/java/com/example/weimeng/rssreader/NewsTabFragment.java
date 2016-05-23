@@ -25,7 +25,7 @@ public class NewsTabFragment extends BaseFragment
 	private LinearLayoutManager linearLayoutManager;
 	private NewsTabRecyclerViewAdapter recyclerViewAdapter;
 
-	String[][] myUrlCaptionMenu = {
+	public static String[][] myUrlCaptionMenu = {
 			{"http://www.npr.org/rss/rss.php?id=1001", "Top Stories"},
 			{"http://www.npr.org/rss/rss.php?id=1003", "U.S. News"},
 			{"http://www.npr.org/rss/rss.php?id=1004", "World News"},

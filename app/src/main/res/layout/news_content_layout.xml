@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/news_content_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorfortab1">
+
+        <zq.mdlib.mdwidget.ButtonIcon
+            android:id="@+id/news_content_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:widget_iconFloat="@mipmap/ic_arrow_back_white"
+            app:widget_iconSize="35dp"/>
+
+        <TextView
+            android:id="@+id/news_content_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Content"
+            android:layout_toRightOf="@id/news_content_back"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/news_content_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/news_content_bar"/>
+
+</RelativeLayout>

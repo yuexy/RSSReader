@@ -14,6 +14,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.weimeng.rssreader.subviews.newslist.NewsListActivity;
+
 import java.util.List;
 
 /**
@@ -146,11 +148,11 @@ public class NewsTabRecyclerViewAdapter extends RecyclerView.Adapter<NewsTabRecy
 				@Override
 				public void onClick(View v)
 				{
-//					Intent intent = new Intent();
-//					intent.putExtra(BasicInfo.NEWS_CATE, getPosition() - 1);
-//					intent.setClass(MyApplication.getInstance(), NewsCategoryActivity.class);
-//
-//					context.startActivity(intent);
+					Intent intent = new Intent();
+					intent.putExtra(BasicInfo.NEWS_ID, getPosition() - 1);
+					intent.setClass(MyApplication.getInstance(), NewsListActivity.class);
+
+					context.startActivity(intent);
 				}
 			});
 		}

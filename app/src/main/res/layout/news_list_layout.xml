@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/news_list_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorfortab1">
+
+        <zq.mdlib.mdwidget.ButtonIcon
+            android:id="@+id/news_list_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:widget_iconFloat="@mipmap/ic_arrow_back_white"
+            app:widget_iconSize="35dp"/>
+
+        <TextView
+            android:id="@+id/news_list_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="新闻"
+            android:layout_toRightOf="@id/news_list_back"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"/>
+
+        <zq.mdlib.mdwidget.ButtonIcon
+            android:id="@+id/news_list_history"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            app:widget_iconFloat="@mipmap/ic_history_white"
+            app:widget_iconSize="35dp"/>
+
+    </RelativeLayout>
+
+    <zq.mdlib.mdwidget.ProgressBarCircular
+        android:id="@+id/news_list_progress_bar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/news_list_wrong_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/news__wrong_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请检查网络连接"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/news_list_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/news_list_bar"/>
+
+
+</RelativeLayout>

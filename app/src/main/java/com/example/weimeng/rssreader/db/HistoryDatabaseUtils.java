@@ -34,21 +34,24 @@ public class HistoryDatabaseUtils extends CustomDatabaseUtils
 
 	public boolean insert(News news)
 	{
-		try
+		if (!hasHistoryByTopic(news.topic))
 		{
-			ContentValues values = new ContentValues();
-			values.put("news_topic", news.topic);
-			values.put("news_time", news.time);
-			values.put("news_des", news.des);
-			values.put("news_add", news.add);
+			try
+			{
+				ContentValues values = new ContentValues();
+				values.put("news_topic", news.topic);
+				values.put("news_time", news.time);
+				values.put("news_des", news.des);
+				values.put("news_add", news.add);
 
-			SQLiteDatabase db = getWritableDatabase();
-			db.insert(TABLE_NAME, null, values);
-			db.close();
-		}
-		catch (Exception e)
-		{
-			return false;
+				SQLiteDatabase db = getWritableDatabase();
+				db.insert(TABLE_NAME, null, values);
+				db.close();
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
 		}
 
 		return true;
@@ -89,6 +92,21 @@ public class HistoryDatabaseUtils extends CustomDatabaseUtils
 
 
 		return newsList;
+	}
+
+	public boolean hasHistoryByTopic(String t)
+	{
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.query(TABLE_NAME, null, "news_topic = ?", new String[]{t}, null, null, null, null);
+
+		boolean hasNext = cursor.moveToNext();
+
+		if (null != cursor)
+			cursor.close();
+
+		db.close();
+
+		return hasNext;
 	}
 
 	public void deleteAllNews()
