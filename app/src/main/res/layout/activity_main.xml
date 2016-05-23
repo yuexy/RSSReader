@@ -1,0 +1,15 @@
+<zq.mdlib.mdviewpager.MaterialViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_viewpager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:viewpager_logoMarginTop="75dp"
+    app:viewpager_enableElevation="true"
+    app:viewpager_color="@color/colorPrimary"
+    app:viewpager_headerHeight="190dp"
+    app:viewpager_headerAlpha="1.0"
+    app:viewpager_hideLogoWithFade="true"
+    app:viewpager_hideTitle="true"
+    app:viewpager_pagerStripMiddle="true"
+    />

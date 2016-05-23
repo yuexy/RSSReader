@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="activity_anim_duration">200</integer>
+    <integer name="activity_anim_duration_slow">300</integer>
+
+    <integer name="activity_anim_vertical_duration">350</integer>
+    <integer name="activity_anim_vertical_duration_slow">400</integer>
+</resources>
